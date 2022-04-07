@@ -98,11 +98,13 @@
           <div class="form-input flex">
             <input
               type="password"
-              id="password-confirm"
+              id="password"
               class="form-control"
-              name="password-confirm"
-              
+              name="password"
+              autocomplete="new-password"
+              errormessage="Please enter password"
               required=""
+              v-model="password"
             />
           </div>
         </div>
