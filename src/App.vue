@@ -102,6 +102,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.errormsg {
+  color: red;
+  
+}
 #page-title {
   font-weight: 600;
   letter-spacing: 3px;

@@ -81,8 +81,6 @@
               class="form-control"
               name="password"
               autocomplete="new-password"
-              errormessage="Please enter password"
-              required=""
               v-model="password"
             />
           </div>
@@ -95,16 +93,16 @@
               >Confirm Password</label
             >
           </div>
-          <div class="form-input flex">
+           <div class="form-input flex">
             <input
               type="password"
               id="password"
+              
               class="form-control"
               name="password"
               autocomplete="new-password"
-              errormessage="Please enter password"
-              required=""
-              v-model="password"
+               v-model="compassword"
+               
             />
           </div>
         </div>
@@ -209,6 +207,7 @@ export default {
    lastName: "",
    email: "",
    password: "",
+   compassword: "",
    country: "",
    Recommendations:""
    
@@ -239,6 +238,10 @@ export default {
       {
       this.errors.push("Password is required");
       }
+      if(!this.compassword) 
+      {
+      this.errors.push("Password is required");
+      }
         if(!this.country) 
       {
       this.errors.push("Selected country is required");
@@ -247,6 +250,11 @@ export default {
       {
       this.errors.push("Recommendation is required");
       }
+      if (this.password != this.compassword)
+      {
+          this.errors.push("Password and Confirm password must be the same.");
+      }
+
  if (this.errors.length < 1 ) {
         this.$emit("next");
         e.preventDefault();
